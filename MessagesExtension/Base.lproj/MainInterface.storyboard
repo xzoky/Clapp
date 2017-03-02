@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Message…" translatesAutoresizingMaskIntoConstraints="NO" id="nCA-vG-rcw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ObA-dk-sSI" id="PNW-to-OUK"/>
+                                </connections>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="q4v-GG-mNp">
+                                <rect key="frame" x="20" y="110" width="280" height="29"/>
+                                <segments>
+                                    <segment title="👏"/>
+                                    <segment title="👏🏻"/>
+                                    <segment title="👏🏼"/>
+                                    <segment title="👏🏽"/>
+                                    <segment title="👏🏾"/>
+                                    <segment title="👏🏿"/>
+                                </segments>
+                                <connections>
+                                    <action selector="skinToneControlValueChanged:" destination="ObA-dk-sSI" eventType="valueChanged" id="xVl-OB-dNx"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nCA-vG-rcw" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" id="ArI-Rc-VpE"/>
+                            <constraint firstAttribute="trailing" secondItem="nCA-vG-rcw" secondAttribute="trailing" id="Fsb-dB-nwi"/>
+                            <constraint firstItem="q4v-GG-mNp" firstAttribute="top" secondItem="nCA-vG-rcw" secondAttribute="bottom" constant="66" id="KaW-52-bbu"/>
+                            <constraint firstAttribute="trailing" secondItem="q4v-GG-mNp" secondAttribute="trailing" constant="20" id="Q0T-qf-i0k"/>
+                            <constraint firstItem="q4v-GG-mNp" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" constant="20" id="XGW-pD-lzW"/>
+                            <constraint firstItem="nCA-vG-rcw" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="lqI-CG-vof"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="searchBar" destination="nCA-vG-rcw" id="BMN-os-YXA"/>
+                        <outlet property="skinToneControl" destination="q4v-GG-mNp" id="cU2-gM-Pxf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.600000000000001" y="127.736131934033"/>
+        </scene>
+    </scenes>
+</document>
