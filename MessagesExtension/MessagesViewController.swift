@@ -31,7 +31,7 @@ class MessagesViewController: MSMessagesAppViewController {
         }
         
         searchBar.returnKeyType = .done
-        searchBar.setImage(emoji.image(), for: .search, state: .normal)
+        searchBar.setImage(emoji.image, for: .search, state: .normal)
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
@@ -47,7 +47,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     @IBAction func skinToneControlValueChanged(_ control: UISegmentedControl) {
-        searchBar.setImage(emoji.image(), for: .search, state: .normal)
+        searchBar.setImage(emoji.image, for: .search, state: .normal)
         UserDefaults.standard.set(control.selectedSegmentIndex, forKey: emojiIndexDefaultsKey)
     }
 }
@@ -77,7 +77,7 @@ fileprivate extension String {
         return merged + " " + comps.last!
     }
     
-    func image() -> UIImage? {
+    var image: UIImage? {
         let size = CGSize(width: 13, height: 13)
         UIGraphicsBeginImageContextWithOptions(size, false, 0);
         (self as NSString).draw(in: CGRect(origin: .zero, size: size), withAttributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 10.5)])
